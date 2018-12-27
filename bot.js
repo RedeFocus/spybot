@@ -135,7 +135,7 @@ ID's bloqueadas: Nenhuma ID punida. - `)
         });
         client.on("ready", () => {
 
-            let img = ["https://images-ext-2.discordapp.net/external/EmNvRIbCjvm6wyNr0lShpky1Q8UYxbJq0HP7KKmlfnM/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/513375539277594625/d876809f2cdee81842e06e4e82aade62.png?width=80&height=80" ];
+            let img = ["https://images-ext-2.discordapp.net/external/EmNvRIbCjvm6wyNr0lShpky1Q8UYxbJq0HP7KKmlfnM/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/513375539277594625/d876809f2cdee81842e06e4e82aade62.png?width=80&height=80", "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwja-vKN68DfAhXCFpAKHRLBCzUQjRx6BAgBEAU&url=https%3A%2F%2Fbr.pinterest.com%2Fpin%2F796926096537799387%2F&psig=AOvVaw3-QbJIflP72fbCkyXb_ZOE&ust=1546028492923950" ];
             
               function setImg() {
                   let randomImage = img[Math.floor(Math.random() * img.length)];
