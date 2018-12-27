@@ -1,7 +1,9 @@
-module.exports.run = async (client, message, args) => {
-  var ids = ["341046919025524746", "2", "3"];
-if (ids.includes (message.author.id)) return message.channel.send("você está proibido de me usar!")
-      
-    const m = await message.channel.send("Ping?");
-        m.edit(`Pong!! O ping do bot: ${m.createdTimestamp - message.createdTimestamp}ms.O seu ping: ${Math.round(client.ping)}ms`);
-  }
+const Discord = require('discord.js')
+
+module.exports.run = async(bot, message, args) => {
+    const ms = await message.channel.send("Algumas informações sobre o Ping...")
+    ms.edit(`:signal_strength:  **| Ping:** ` + Math.round(bot.ping) + `ms`);
+}
+module.exports.help = {
+    name: "ping"
+}
