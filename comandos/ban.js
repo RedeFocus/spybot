@@ -1,47 +1,40 @@
-/*module.exports.run = (client, message, args) => {
+const Discord = require('discord.js')
 
-exports.run = async (client, message, args) => {
-    if(!message.member.roles.some(r=>["STAFF", "Dono"].includes(r.name)) )
-      return message.reply("desculpe, você não tem permissão para usar isto!");
-    let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Por favor mencione um membro válido deste servidor");
-    if(!member.bannable) 
-      return message.reply("Eu não posso banir este usuário! Ele pode ter um cargo mais alto ou eu não tenho permissões de banir, solução: https://i.imgur.com/SBAEu25.gif");
-    let reason = args.slice(1).join(' ');
-    if(!reason) reason = "Nenhuma razão fornecida";
-    await member.ban(reason)
-      .catch(error => message.reply(`Desculpe ${message.author} não consegui banir o membro devido o : ${error}`));
-    message.reply(`${member.user.tag} foi banido!\n Staff ${message.author.tag}\n Motivo: ${reason}`);
-  }
-}*/
-const discord = require('discord.js')
-module.exports.run = (client, message, args) => {
-  var ids = ["341046919025524746", "2", "3"];
-if (ids.includes (message.author.id)) return message.channel.send("você está proibido de me usar!")
-      
-var razão = args.slice(1).join(" ")
+module.exports.run = async(bot, message, args) => {
+    if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando. Acha que algo está errado? Digite /ticket.");
+    if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return null;
+  
+    let user = message.mentions.users.first();
+    let reason = message.content.split(" ").slice(2).join(" ");
+    if (message.mentions.users.size < 1) return message.reply("mencione algum usuário para que ele possa ser punido.");
+    if (!message.guild.member(user).bannable) return message.reply("o usuário mencionado possui um cargo superior ao meu.");
+    if (message.author.id === user.id) return message.reply("eu não posso te banir, haha.")
+    message.reply(`você está prestes a banir ${user}. Para confirmar a operação, clique no emoji abaixo.`).then(msg => {
+        msg.react('✅')
+        const sure = (reaction, user) => reaction.emoji.name === `✅` && user.id === message.author.id;
+        const r1 = msg.createReactionCollector(sure, {time: 60000 });
 
-    var usuario = message.mentions.users.first();
-    let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!message.member.roles.some(r=>['name', "Administrador", "STAFF", "DONO", "Dono(a) do grupo", "DEV"].includes(r.name)) )
-    if(message.mentions.users.size < 1) return message.reply("você não mencinou ninguém")
-    if(!message.guild.member(usuario).bannable) return message.reply("eu não posso banir essa pessoa")
-    if(razão.length < 1) return message.reply("você não colocou uma razão")  
-
-    message.guild.member(usuario).ban()
-
-   var discord = require ('discord.js')
-
-   var embed = new discord.RichEmbed()
-   .setTitle("**Usuário banido do server**")
-   .setColor("#36393e")
-   .setTimestamp()
-   .addField("Staff: " , message.author.username, true)
-   .addField("Usuário: " , usuario.username,true)
-   .addField("ID: " , usuario.id,true)
-   .setThumbnail(message.author.displayAvatarURL)
-   .addField(":hammer: Razão: " , razão, true);
-
-   message.channel.send(embed)
+    r1.on('collect', r => {
+        r.remove(message.author.id);
+        message.guild.member(user).ban(reason);
+        message.reply(`você acabou de banir ${user} (\`${user.tag}\` - \`${user.id}\`).`);
+        
+        let modlog = bot.channels.find("name", "punicoes");
+        if (!modlog) return message.reply("Como um canal para arquivar punições não existe neste servidor, esta punição não será salva.");
+        let memberavatar = user.avatarURL
+        var embed = new Discord.RichEmbed()
+        .setTitle("**Um membro foi banido...**")
+        .setColor("#36393e")
+        .setTimestamp()
+        .addField("Autor da punição: ", message.author.username, true)
+        .addField("Usuário punido: " , user.username, true)
+        .addField("ID: " , user.id, true)
+        .setThumbnail(memberavatar)
+        .addField("Provas: " , reason, true);
+        modlog.send(embed)
+    });
+    })
+}
+module.exports.help = {
+    name: "banir"
 }
