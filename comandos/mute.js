@@ -1,0 +1,44 @@
+const Discord = require('discord.js');
+const ms = require("ms");
+
+module.exports.run = async (client,  message, args) => {
+  var ids = ["341046919025524746", "2", "3"];
+if (ids.includes (message.author.id)) return message.channel.send("você está proibido de me usar!")
+      
+
+  let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!message.member.roles.some(r=>['name', "Administrador", "STAFF", "DONO", "Dono(a) do grupo", "DEV"].includes(r.name)) )
+  return message.reply("desculpe, você não tem permissão para usar isto!  ");
+  if(!tomute) return message.reply("Não foi possivel encontrar o usuário.");
+  let muterole = message.guild.roles.find(role => role.name === 'Muted');
+
+  if(!muterole){
+    try{
+      muterole = await message.guild.createRole({ 
+        name: "Muted",
+        color: "RANDOM",
+        permissions:[]
+      })
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false
+        });
+      });
+    }catch(e){
+      console.log(e.stack);
+    }
+  }
+  //end of create role
+  let mutetime = args[1];
+  if(!mutetime) return message.reply("Não especificaste um tempo!");
+
+  await(tomute.addRole(muterole.id));
+  message.reply(`<@${tomute.id}> foi mutado por ${ms(ms(mutetime))}`);
+
+  setTimeout(function(){
+    tomute.removeRole(muterole.id);
+    message.channel.send(`<@${tomute.id}> foi desmutado.`);
+  }, ms(mutetime));
+
+}
