@@ -1,1 +1,1 @@
-# spybot
+# SpyBotLegal
