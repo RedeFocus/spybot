@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async(bot, message, args) => {
-    if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando. Acha que algo está errado? Digite /ticket.");
+    if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando. Acha que algo está errado? Digite p-ticket.");
     if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) return null;
   
     let user = message.mentions.users.first();
