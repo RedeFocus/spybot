@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 exports.run = async (bot, message, args) => {
     message.delete()
     var ids = ["297104318794825728"];
-if (ids.includes (message.author.id)) return message.channel.send("você está proibido de me usar!")
+if (ids.includes (message.author.id)) return message.channel.send("você está proibido de me usar!!")
       
     
   
