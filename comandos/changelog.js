@@ -13,9 +13,10 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
         if (text.length < 1) return message.channel.send("Você tem que usar da forma: ``p-changelog EQUIPE <msg>");
         const embed = new Discord.RichEmbed()
         .setColor(11543845)
-        .setTitle("\:barber: Changelog:  \:barber: ")
+        .setTitle("\:barber: **CHANGELOG** \:barber: ")
         
-        .setDescription(▫ text)
+        .setDescription("▫")
+        .setDescription(text)
         .setFooter(`ChangeLog atualizada por: ${target.username}`, message.author.displayAvatarURL)
         .setTimestamp()
         .setThumbnail("http://www.workschedule.net/wp-content/uploads/2014/08/changelog1.png")
