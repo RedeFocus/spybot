@@ -34,7 +34,7 @@ module.exports.run = async(bot, message, args) => {
         modlog.send(embed)
     });
     })
-}
+
 module.exports.help = {
     name: "banir"
 }
