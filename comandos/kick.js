@@ -1,13 +1,9 @@
 exports.run = async (client, message, args) => {
-  var ids = ["341046919025524746", "2", "3"];
-if (ids.includes (message.author.id)) return message.channel.send("você está proibido de me usar!");
-var userid = ["385928513536131084"]
-if (!message.author.id === userid) return message.reply("Vc n tem o ID para usar esse comando")
+ 
       
     
     //adicione o nome dos cargos que vc quer que use esse comando!
-        if(!message.member.roles.some(r=>['name', "Administrador", "STAFF", "DONO", "Dono(a) do grupo", "DEV", "Administrador"].includes(r.name)) )
-          return message.reply("desculpe, você não tem permissão para usar isto!  ");
+    if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando")
         let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member)
           return message.reply(" |ERR| Mencione um membro válido deste servidor");
