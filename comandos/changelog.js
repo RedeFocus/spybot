@@ -15,7 +15,7 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
         .setColor(11543845)
         .setTitle("\:barber: Changelog:  \:barber: ")
         
-        .setDescription(`▫ ${text}`)
+        .setDescription(▫ text)
         .setFooter(`ChangeLog atualizada por: ${target.username}`, message.author.displayAvatarURL)
         .setTimestamp()
         .setThumbnail("http://www.workschedule.net/wp-content/uploads/2014/08/changelog1.png")
