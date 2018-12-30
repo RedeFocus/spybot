@@ -17,7 +17,7 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
         
         .setDescription("▫")
         .setDescription(text)
-        .setFooter(`ChangeLog atualizada por: ${target.username}`, message.author.displayAvatarURL)
+        .setFooter(`| Hellen | ${target.username}`, message.author.displayAvatarURL)
         .setTimestamp()
         .setThumbnail("http://www.workschedule.net/wp-content/uploads/2014/08/changelog1.png")
         message.channel.send("@everyone @here")
