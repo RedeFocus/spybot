@@ -3,7 +3,7 @@ exports.run = async (client, message, args) => {
       
     
     //adicione o nome dos cargos que vc quer que use esse comando!
-    if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando")
+    if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando")
         let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member)
           return message.reply(" |ERR| Mencione um membro válido deste servidor");
