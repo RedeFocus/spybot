@@ -18,7 +18,6 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
         .setFooter(`ChangeLog atualizada por: ${target.username}`, message.author.displayAvatarURL)
         .setTimestamp()
         .setThumbnail("http://www.workschedule.net/wp-content/uploads/2014/08/changelog1.png")
-        .setImage("https://www.leadbi.com/wp-content/uploads/2018/08/changelog.png") 
         message.channel.send("Quer que eu envie um @ everyone? Converse com um gerente responsável por isso.")
         message.channel.send({embed})
 
