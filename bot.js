@@ -99,7 +99,7 @@ ID's bloqueadas: Nenhuma ID punida. - `)
                         id: message.author.id,
                         allowed: ["VIEW_CHANNEL", "SEND_MESSAGES"]
                     }, {
-                        id: message.guild.roles.find(c => c.name === "Gerente").id,
+                        id: message.guild.roles.find(c => c.name === "Helper").id,
                         allowed: ["VIEW_CHANNEL", "SEND_MESSAGES"]
                     }, {
                         id: message.guild.defaultRole.id,
