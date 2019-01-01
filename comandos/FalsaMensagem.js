@@ -24,6 +24,6 @@ message.channel.createWebhook(user.username, user.avatarURL).then(w => {
 })
 
 } catch (err) {
-message.reply(' **Eu não tenho permissão para criar um Webhook neste servidor, ou não encontrei este usuário.**')
+message.reply(' **Eu não tenho permissão para criar um Webhook neste servidor, ou não encontrei este usuário. :(**')
 }
 }
