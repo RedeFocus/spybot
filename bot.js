@@ -115,8 +115,8 @@ ID's bloqueadas: Nenhuma ID punida. - `)
             console.log(`Bot iniciado com sucesso!`);
             let status = [
                 
-                { name: 'Vendo um streamer muuito lindo e daora, apresento para vocês: xZirty!', type: 'STREAMING', url: 'https://www.twitch.tv/xzirty' },
-                { name: `Eu estou em ${client.guilds.size} servidores.`, type: 'STREAMING', url: 'https://www.twitch.tv/xzirty' }
+                { name: 'Meu criador: PedroMzika', type: 'STREAMING', url: 'https://www.twitch.tv/xzirty' },
+                { name: `Eu estou em ${client.guilds.size} servidores.`, type: 'WATCHING'}
             ];
             //https://www.twitch.tv/xzirty
             //STREAMING = Transmitindo
@@ -135,7 +135,7 @@ ID's bloqueadas: Nenhuma ID punida. - `)
         });
         client.on("ready", () => {
 
-           let img = ["https://images-ext-2.discordapp.net/external/EmNvRIbCjvm6wyNr0lShpky1Q8UYxbJq0HP7KKmlfnM/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/513375539277594625/d876809f2cdee81842e06e4e82aade62.png?width=80&height=80" ];
+           let img = ["http://img1.ak.crunchyroll.com/i/spire1/05fae5f9f431e405cd018ed0063cad6e1411418346_full.jpg" ];
             
               function setImg() {
                   let randomImage = img[Math.floor(Math.random() * img.length)];
