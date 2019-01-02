@@ -115,8 +115,8 @@ ID's bloqueadas: Nenhuma ID punida. - `)
             console.log(`Bot iniciado com sucesso!`);
             let status = [
                 
-                { name: 'Meu criador: PedroMzika', type: 'STREAMING', url: 'https://www.twitch.tv/xzirty' },
-                { name: `Eu estou em ${client.guilds.size} servidores.`, type: 'WATCHING'}
+                { name: 'para o meu criador: PedroMzika', type: 'STREAMING', url: 'https://www.twitch.tv/xzirty' },
+                { name: `para ${client.guilds.size} servidores.`, type: 'WATCHING'}
             ];
             //https://www.twitch.tv/xzirty
             //STREAMING = Transmitindo
