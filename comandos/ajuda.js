@@ -27,7 +27,7 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
   .setTitle('👮**Administrador**👮')
   .setColor('#36393e')
   .setThumbnail(bicon)
-  .addField(`${prefix}kick`, `serve para você expulsar um membro do seu servidor.(TESTE)`)
+  .addField(`p-kick`, `serve para você expulsar um membro do seu servidor.`)
   .addField('p-ban', `serve para você banir permanetemente ou não um membro do seu servidor.`)
   .addField('p-delete', `Apaga de duas até 100 mensagens.`)
   .addField('p-say', `serve para você falar pelo bot`)
