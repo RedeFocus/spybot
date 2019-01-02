@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 
 client.on("ready", () => { //abertura do evento ready
-    console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
+    console.log(`Bot foi iniciado com sucesso, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
     console.log(`logado, com ${client.user.size} usuários.`);
     client.user.setPresence({ game: { name: 'Sabe esse cara da twitch? Foi ele que ajudou o meu DONO a me criar😉', type: 1, url: 'https://www.twitch.tv/player_dbr'} });
 
