@@ -19,7 +19,7 @@ module.exports.run = async(bot, message, args) => {
         message.guild.member(user).ban(reason);
         message.reply(`você acabou de banir ${user} (\`${user.tag}\` - \`${user.id}\`).`);
         
-        let modlog = bot.channels.find("name", "punicoes");
+        let modlog = bot.channels.find("name", "punições");
         if (!modlog) return message.reply("Como um canal para arquivar punições não existe neste servidor, esta punição não será salva.");
         let memberavatar = user.avatarURL
         var embed = new Discord.RichEmbed()
