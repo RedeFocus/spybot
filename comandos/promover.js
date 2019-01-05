@@ -1,7 +1,7 @@
 //comando addrole
 //addrole @membro cargo
 if(comando === "addrole") {
-    if(!message.member.roles.some(r=>["nomedarolequepodeaddcargo"].includes(r.name)) ) return;
+    if (!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return message.reply("você não tem permissão para utilizar este comando. Acha que algo está errado?");
 const member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 if(!member) return;
 const role = args.join(" ").slice(22);
