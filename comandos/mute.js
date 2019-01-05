@@ -41,4 +41,4 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
     message.channel.send(`<@${tomute.id}> foi desmutado.`);
   }, ms(mutetime));
 
-}
+
