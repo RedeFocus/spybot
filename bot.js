@@ -16,9 +16,9 @@ client.on("ready", () => { //abertura do evento ready
 
 client.on("message", async message => { //abertura do evento message
     if (!message.content.startsWith ("p-")) return;
-    var ids = ["ID"];
+    var ids = ["426480286487019520"];
 if (ids.includes (message.author.id)) return message.channel.send(`Seu ID foi bloqueado!
-ID's bloqueadas: Nenhuma ID punida. - `)
+ID's bloqueadas: MysticDragon = ID: 426480286487019520 `)
 
 
 
