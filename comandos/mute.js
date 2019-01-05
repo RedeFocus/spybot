@@ -7,8 +7,7 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
       
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
- if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando. Acha que algo está errado? Digite p-ticket.");
-  return message.reply("desculpe, você não tem permissão para usar isto!  ");
+ if (!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("você não tem permissão para utilizar este comando. Acha que algo está errado? Digite p-ticket.");
   if(!tomute) return message.reply("Não foi possivel encontrar o usuário.");
   let muterole = message.guild.roles.find(role => role.name === 'Muted');
 
@@ -42,4 +41,3 @@ if (ids.includes (message.author.id)) return message.channel.send("você está p
   }, ms(mutetime));
   
 }
-
