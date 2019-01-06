@@ -16,9 +16,9 @@ client.on("ready", () => { //abertura do evento ready
 
 client.on("message", async message => { //abertura do evento message
     if (!message.content.startsWith ("p-")) return;
-    var ids = ["426480286487019520", "520708967874428928", "391290398309613573","391290398309613573", "318066360544526336"];
+    var ids = ["426480286487019520", "391290398309613573","391290398309613573", "318066360544526336"];
 if (ids.includes (message.author.id)) return message.channel.send(`Seu ID foi bloqueado!
-ID's bloqueadas: MysticDragon, Xaanzyy, !LILVIRTAO777, !.ySrJoaoG0D_.`)
+ID's bloqueadas: MysticDragon, !LILVIRTAO777, !.ySrJoaoG0D_.`) ///520708967874428928
 
 
 
