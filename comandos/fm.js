@@ -1,6 +1,7 @@
-module.exports.run = async (client, message, args) => {
+/* module.exports.run = async (client, message, args) => {
     var ids = ["341046919025524746", "2", "3"];
 if (ids.includes (message.author.id)) return message.channel.send("você está proibido de me usar!")
+    
       
     try {
 let user;
@@ -27,4 +28,4 @@ message.channel.createWebhook(user.username, user.avatarURL).then(w => {
 } catch (err) {
 message.reply(' **Eu não tenho permissão para criar um Webhook neste servidor, ou não encontrei este usuário.**')
 }
-}
+} */
