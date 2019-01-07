@@ -68,7 +68,7 @@ ID's bloqueadas: MysticDragon, !LILVIRTAO777, !.ySrJoaoG0D_.`) ///52070896787442
     }); //fechamento do evento message
     client.on("message", message => {
         if (message.content === `p-ticket`) { 
-            message.channel.send(new Discord.RichEmbed().setDescription("Sua reação, é o seu ticket.\n\n📌 Para suporte\n\n🏆 Para VIP\n\n🎈 Para Youtuber\n\n💣 para revisão de punição.")).then(async msg => {
+            message.channel.send(new Discord.RichEmbed().setDescription("Sua reação, é o seu ticket.\n\n📌 Para suporte\n\n🏆 Para reportar abuso\n\n🎈 Para Youtuber\n\n💣 para revisão de punição.")).then(async msg => {
                 await msg.react("📌")
                 await msg.react("🏆") 
                 await msg.react("🎈")
@@ -81,7 +81,7 @@ ID's bloqueadas: MysticDragon, !LILVIRTAO777, !.ySrJoaoG0D_.`) ///52070896787442
                             title = "Suporte"
                             break
                         case "🏆":
-                            title = "VIP"
+                            title = "Reportar abuso"
                             break
                         case "🎈":
                             title = "YouTuber"
