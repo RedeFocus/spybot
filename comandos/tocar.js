@@ -1,4 +1,9 @@
-if (msg.author.id === midi || msg.author.id === "338192747754160138" || msg.member.roles.some(r => ["Logan DJ", "The Music Meister"].includes(r.name))) {
+const Discord = require("discord.js");
+exports.run = async (client, message, args) => {
+
+
+
+if (msg.author.id === midi || msg.author.id === "519576639382749199" || msg.member.roles.some(r => ["STAFF"].includes(r.name))) {
     if (!msg.content.startsWith(config.prefix)) return undefined;
     const args = msg.content.split(' ');
     const searchString = args.slice(1).join(' ');
@@ -223,4 +228,5 @@ var NowEmbed = new Discord.RichEmbed().setColor("990033")
 serverQueue.textChannel.send(NowEmbed);
 
 
+}
 }
