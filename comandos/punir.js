@@ -7,7 +7,7 @@ module.exports.run = async(bot, message, args) => {
     let user = message.mentions.users.first();
     let reason = message.content.split(" ").slice(2).join(" ");
     if (message.mentions.users.size < 1) return message.reply("mencione algum usuário para que ele possa ser punido.");
-    if (!message.guild.member(user).bannable) return message.reply("o usuário mencionado possui um cargo superior ao meu.");
+
     if (message.author.id === user.id) return message.reply("eu não posso te punir, haha.")
     message.reply(`você está prestes a punir ${user}. Reaja em :hammer_pick: caso queira efetuar um **banimento**, ou em :hammer: caso queira efetuar uma **expulsão**.`).then(msg => {
         msg.react('⚒').then(r=>{
