@@ -23,7 +23,7 @@ Diga a sua dúvida.`);
                 .setDescription(`**Autor:** ${message.author.username}
 **Dúvida:** ${player}`)
                 .setThumbnail(usuarioicone)
-                let canal = client.channels.get("523587206837829632").send(reportplayer);
+                let canal = client.channels.get("523912283383005186").send(reportplayer);
                 message.author.send("✅ **Sua dúvida foi enviado com sucesso!**")
                 
             })
