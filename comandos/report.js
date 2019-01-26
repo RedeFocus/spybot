@@ -31,7 +31,7 @@ Enfim, diga-nos qual membro do servidor você deseja reportar. (Use Nick#0001)`)
 **Provas:** ${motivo}`)
                 .setThumbnail(usuarioicone)
                 .setColor("RGB=#00FFFF")
-                let canal = client.channels.get("524804683156422657").send(reportplayer);
+                let canal = client.channels.get("523912304551526420").send(reportplayer);
                 message.author.send("✅ **Seu report foi enviado com sucesso!**")
             })
         })
