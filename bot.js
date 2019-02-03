@@ -135,7 +135,7 @@ ID's bloqueadas: MysticDragon, !LILVIRTAO777, !.ySrJoaoG0D_.`) ///52070896787442
         });
         client.on("ready", () => {
 
-           let img = ["http://img1.ak.crunchyroll.com/i/spire1/05fae5f9f431e405cd018ed0063cad6e1411418346_full.jpg" ];
+           let img = ["https://static.quizur.com/i/b/589670b2c3e0f5.72943141589670b2b40e60.46922380.jpg" ];
             
               function setImg() {
                   let randomImage = img[Math.floor(Math.random() * img.length)];
